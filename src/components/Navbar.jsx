@@ -1,6 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
+
+
+
 
 
 const Navbar = () => {
@@ -104,12 +110,20 @@ const Navbar = () => {
                     <div>
                         {user ?
                             <div className='flex justify-center items-center gap-5'>
-                                <div className="text-black avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                <div className="text-black avatar tooltip tooltip-bottom">
+                                    <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} className="w-12 rounded-full">
+                                        <img src={user?.photoURL} />
+                                        <Tooltip id="my-tooltip" />
+                                    </div>
+                                    
+
+                                </div>
+                                {/* <div className="text-black avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
                                     <div className="w-12 rounded-full">
                                         <img src={user?.photoURL} />
                                     </div>
 
-                                </div>
+                                </div> */}
                                 <button onClick={() => logOut()} className='btn btn-sm btn-primary'>Logout</button>
 
                             </div> :
