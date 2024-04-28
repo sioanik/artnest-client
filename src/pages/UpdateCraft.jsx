@@ -8,7 +8,78 @@ const UpdateCraft = () => {
 
     const { user } = useContext(AuthContext)
     // console.log(user);
-    const handleAddCraft = (e) => {
+    // const handleAddCraft = (e) => {
+    // e.preventDefault()
+    // const form = e.target
+    // const item_name = form.item_name.value
+    // const subcategory_Name = form.subcategory_Name.value
+    // const price = form.price.value
+
+    // const image = form.image.value
+    // const rating = form.rating.value
+    // const processing_time = form.processing_time.value
+
+    // const description = form.description.value
+    // const username = form.username.value
+    // const email = form.useremail.value
+
+    // const customizationField = document.getElementById('customization')
+    // const customization = customizationField.value
+
+    // const stockStatusField = document.getElementById('stock')
+    // const stockStatus = stockStatusField.value
+
+
+
+
+    // const newCraft = { item_name, subcategory_Name, price, customization, image, rating, processing_time, stockStatus, description, username, email }
+
+    // console.log(newCraft);
+
+    //     fetch('http://localhost:5000/crafts', {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(newCraft),
+    //     })
+    // .then(res => res.json())
+    // .then(data => {
+    //     console.log(data);
+    //     if (data.insertedId) {
+    //         Swal.fire({
+    //             title: 'Success!',
+    //             text: 'Craft added successfully',
+    //             icon: 'success',
+    //             confirmButtonText: 'Close'
+    //         })
+    //     } else {
+    //         Swal.fire({
+    //             title: 'Error!',
+    //             text: 'Something went wrong!',
+    //             icon: 'error',
+    //             confirmButtonText: 'Close'
+    //         })
+    //     }
+    // })
+
+    // }
+
+    const { id } = useParams()
+    console.log(id);
+
+    const [item, setItem] = useState({})
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/updateCraft/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setItem(data)
+                console.log(data);
+            })
+    }, [id])
+
+    const handleUpdateCraft = (e) => {
         e.preventDefault()
         const form = e.target
         const item_name = form.item_name.value
@@ -36,50 +107,33 @@ const UpdateCraft = () => {
 
         console.log(newCraft);
 
-        // fetch('http://localhost:5000/crafts', {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify(newCraft),
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Craft added successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Close'
-        //             })
-        //         } else {
-        //             Swal.fire({
-        //                 title: 'Error!',
-        //                 text: 'Something went wrong!',
-        //                 icon: 'error',
-        //                 confirmButtonText: 'Close'
-        //             })
-        //         }
-        //     })
-
-    }
-
-    const {id} = useParams()
-    console.log(id);
-
-    const [item, setItem] = useState({})
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/updateCraft/${id}`)
+        fetch(`http://localhost:5000/updateCrafts/${id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newCraft),
+        })
             .then(res => res.json())
             .then(data => {
-                setItem(data)
                 console.log(data);
+                if (data.modifiedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Craft updated successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Close'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Something went wrong!',
+                        icon: 'error',
+                        confirmButtonText: 'Close'
+                    })
+                }
             })
-    }, [id])
-
-
+    }
 
 
     return (
@@ -89,7 +143,7 @@ const UpdateCraft = () => {
                 <p className="text-center">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p>
             </div>
             <div className="mt-10 px-10">
-                <form onSubmit={handleAddCraft}>
+                <form onSubmit={handleUpdateCraft}>
                     <div className="flex gap-6">
                         <div>
                             <label className="form-control w-full max-w-xs">
@@ -194,7 +248,7 @@ const UpdateCraft = () => {
 
                         </label>
                     </div>
-                    <input className="btn btn-block mt-8 bg-green-700" type="submit" value="Add Craft Item" />
+                    <input className="btn btn-block mt-8 bg-green-700" type="submit" value="Update Craft Item" />
                 </form>
             </div>
         </div>
