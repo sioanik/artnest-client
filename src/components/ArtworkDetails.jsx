@@ -19,8 +19,8 @@ const ArtworkDetails = () => {
 
     return (
         <div className="mx-auto">
-            <div className="card bg-base-100 shadow-xl">
-                <figure><img src={selectedArt.image} alt="" /></figure>
+            <div className="card bg-base-100 w-1/2 mx-auto shadow-xl">
+                <figure><img className="" src={selectedArt.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                     {selectedArt.item_name}

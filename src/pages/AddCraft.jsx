@@ -11,7 +11,7 @@ const AddCraft = () => {
         e.preventDefault()
         const form = e.target
         const item_name = form.item_name.value
-        const subcategory_Name = form.subcategory_Name.value
+        // const subcategory_Name = form.subcategory_Name.value
         const price = form.price.value
         // const customization = form.customization.value
         const image = form.image.value
@@ -27,6 +27,9 @@ const AddCraft = () => {
 
         const stockStatusField = document.getElementById('stock')
         const stockStatus = stockStatusField.value
+
+        const subcategory_Field = document.getElementById('subcategory')
+        const subcategory_Name = subcategory_Field.value
 
 
 
@@ -70,9 +73,9 @@ const AddCraft = () => {
                 <p className="text-2xl text-center py-8">Add Craft Item</p>
                 <p className="text-center">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p>
             </div>
-            <div className="mt-10 px-10">
+            <div className="mt-10 px-10 mx-auto">
                 <form onSubmit={handleAddCraft}>
-                    <div className="flex gap-6">
+                    <div className="flex justify-center gap-6">
                         <div>
                             <label className="form-control w-full max-w-xs">
                                 <div className="label">
@@ -82,13 +85,43 @@ const AddCraft = () => {
 
                             </label>
 
-                            <label className="form-control w-full max-w-xs">
+                            {/* <label className="form-control w-full max-w-xs">
                                 <div className="label">
                                     <span className="label-text">Subcategory Name</span>
                                 </div>
                                 <input type="text" name="subcategory_Name" placeholder="Subcategory" className="input input-bordered w-full max-w-xs" />
 
+                            </label> */}
+
+
+
+                            <label className="form-control w-full max-w-xs">
+                                <div className="label">
+                                    <span className="label-text">Subcategory Name</span>
+                                </div>
+                                <select className="input input-bordered w-full max-w-xs" name="" id="subcategory">
+                                    <option value="">Select</option>
+
+                                    <option value="Landscape Painting">Landscape Painting</option>
+
+                                    <option value="Portrait Drawing">Portrait Drawing</option>
+
+                                    <option value="Watercolour Painting">Watercolour Painting</option>
+
+                                    <option value="Oil Painting">Oil Painting</option>
+
+                                    <option value="Charcoal Sketching">Charcoal Sketching</option>
+
+                                    <option value="Cartoon Drawing">Cartoon Drawing</option>
+
+                                </select>
+                                {/* <input type="text" name="customization" placeholder="Yes/No" className="input input-bordered w-full max-w-xs" /> */}
+
                             </label>
+
+
+
+
                             <label className="form-control w-full max-w-xs">
                                 <div className="label">
                                     <span className="label-text">Price</span>
@@ -152,31 +185,39 @@ const AddCraft = () => {
 
                         </div>
                     </div>
-                    <label className="form-control w-full max-w-md">
-                        <div className="label">
-                            <span className="label-text">Short description</span>
-                        </div>
-                        <input type="" name="description" placeholder="Short description" className="input input-bordered w-full max-w-md" />
-
-                    </label>
-
-                    <div className="flex mt-4">
-                        <label className="form-control w-full max-w-xs">
+                    <div className="flex justify-center">
+                        <label className="form-control w-full max-w-md">
                             <div className="label">
-                                <span className="label-text">User Email</span>
+                                <span className="label-text">Short description</span>
                             </div>
-                            <input type="email" name="useremail" placeholder="User Email" defaultValue={user.email} className="input input-bordered w-full max-w-xs" disabled />
-
-                        </label>
-                        <label className="form-control w-full max-w-xs">
-                            <div className="label">
-                                <span className="label-text">User Name</span>
-                            </div>
-                            <input type="text" name="username" placeholder="User Name" defaultValue={user.displayName} className="input input-bordered w-full max-w-xs" disabled />
+                            <input type="" name="description" placeholder="Short description" className="input input-bordered w-full max-w-md" />
 
                         </label>
                     </div>
-                    <input className="btn btn-block mt-8 bg-green-700" type="submit" value="Add Craft Item" />
+
+                    <div className="flex justify-center mt-4">
+                        <div>
+                            <label className="form-control w-full max-w-xs">
+                                <div className="label">
+                                    <span className="label-text">User Email</span>
+                                </div>
+                                <input type="email" name="useremail" placeholder="User Email" defaultValue={user.email} className="input input-bordered w-full max-w-xs" disabled />
+
+                            </label>
+                        </div>
+                        <div>
+                            <label className="form-control w-full max-w-xs">
+                                <div className="label">
+                                    <span className="label-text">User Name</span>
+                                </div>
+                                <input type="text" name="username" placeholder="User Name" defaultValue={user.displayName} className="input input-bordered w-full max-w-xs" disabled />
+
+                            </label>
+                        </div>
+                    </div>
+                    <div className="flex justify-center">
+                        <input className="btn  btn-primary mt-8" type="submit" value="Add Craft Item" />
+                    </div>
                 </form>
             </div>
         </div>

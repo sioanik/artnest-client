@@ -18,7 +18,7 @@ const AllItemsDetails = () => {
     }, [id])
 
     return (
-        <div className="card bg-base-100 py-10 shadow-xl">
+        <div className="w-2/3 mx-auto card bg-base-100 py-10 shadow-xl">
             <figure><img src={item.image} className="max-h-48" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
