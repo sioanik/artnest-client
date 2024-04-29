@@ -85,8 +85,8 @@ const UpdateCraft = () => {
     return (
         <div>
             <div className="px-10">
-                <p className="text-2xl text-center py-8">Add Craft Item</p>
-                <p className="text-center">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p>
+                <p className="text-2xl text-center py-8">Update Craft Item</p>
+                {/* <p className="text-center">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p> */}
             </div>
             <div className="mt-10 px-10">
                 <form onSubmit={handleUpdateCraft}>

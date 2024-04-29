@@ -103,7 +103,7 @@ const MyArtList = () => {
             <div>
                 <div className="flex justify-center mb-20">
                     <div className="dropdown dropdown-hover">
-                        <div tabIndex={0} role="button" className="btn m-1">Customization Filter</div>
+                        <div tabIndex={0} role="button" className="btn m-1">Filter Customization </div>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li onClick={handleCustomizable}><a>Customizable</a></li>
                             <li onClick={handleNotCustomizable}><a>Not Customizable</a></li>

@@ -13,14 +13,14 @@ const Navbar = () => {
 
     const { logOut, user } = useContext(AuthContext)
 
-    const [theme, setTheme]  = useState('light')
+    const [theme, setTheme] = useState('light')
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem('theme', theme)
         const localTheme = localStorage.getItem('theme')
         // console.log(localTheme);
         document.querySelector('html').setAttribute('data-theme', localTheme)
-    },[theme])
+    }, [theme])
 
 
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         else {
             setTheme('light')
         }
-        
+
     }
 
     return (
@@ -43,7 +43,11 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
+
+
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52">
+
+                            {/* Mobile view------  */}
                             <li><NavLink to={'/'} >Home</NavLink></li>
 
                             <li>
@@ -54,6 +58,9 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <NavLink to={'/my-arts'}>My Items</NavLink>
+                            </li>
+                            <li className="md:hidden">
+                                <NavLink to={'/register'}>Register</NavLink>
                             </li>
                             <li>
                                 {/* <NavLink to={'/update-profile'}>Update Profile</NavLink> */}
@@ -73,14 +80,14 @@ const Navbar = () => {
                             <NavLink to={'/'}>Home</NavLink>
                         </li>
                         <li>
-                                <NavLink to={'/all-items'}>All Items</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={'/add-craft'}>Add Item</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={'/my-arts'}>My Items</NavLink>
-                            </li>
+                            <NavLink to={'/all-items'}>All Items</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'/add-craft'}>Add Item</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'/my-arts'}>My Items</NavLink>
+                        </li>
 
                         <li>
                             {/* <NavLink to={'/update-profile'}>Update Profile</NavLink> */}
@@ -99,7 +106,7 @@ const Navbar = () => {
                             <NavLink to={'/login'}>Login</NavLink>
                         </li> */}
 
-                        <li>
+                        <li className="hidden md:block">
                             <NavLink to={'/register'}>Register</NavLink>
                         </li>
 
@@ -115,7 +122,7 @@ const Navbar = () => {
                                         <img src={user?.photoURL} />
                                         <Tooltip id="my-tooltip" />
                                     </div>
-                                    
+
 
                                 </div>
                                 {/* <div className="text-black avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
