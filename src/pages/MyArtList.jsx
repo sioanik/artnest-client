@@ -10,6 +10,14 @@ const MyArtList = () => {
 
     const [myItem, setMyItem] = useState([])
 
+    // const remaining = myItem.filter(item => item._id !== id )
+
+    const custAvailable = myItem.filter(item => item.customization == 'yes')
+    console.log(custAvailable);
+
+    const custUnavailable = myItem.filter(item => item.customization == 'no')
+    console.log(custUnavailable);
+
     
 
     useEffect(() => {
