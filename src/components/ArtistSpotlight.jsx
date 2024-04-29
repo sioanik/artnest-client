@@ -16,13 +16,13 @@ const ArtistSpotlight = () => {
     }, [])
 
     return (
-        <div className=" w-[80%] mx-auto mt-20">
-            <div className=" ">
+        <div className="w-[80%] mx-auto my-14">
+            <div className="pb-20">
                 <p className="text-2xl text-center py-8">Artist Spotlight</p>
                 <p className="text-center">Explore the brilliance of our featured artist, delving into their unique style and captivating creations. Immerse yourself in a world of artistic mastery.</p>
             </div>
             <div className="flex justify-center items-center">
-                <div className="grid grid-cols-2 gap-10 m-24">
+                <div className="grid lg:grid-cols-2 gap-4">
                     {
                         artist.map((item, idx) => <ArtistCard key={idx} item={item}></ArtistCard>)
                     }

@@ -2,17 +2,17 @@
 
 const Testimonial = () => {
     return (
-        <div className="w-[80%] mx-auto">
+        <div className="w-[80%] mx-auto my-14">
             <div className="my-8 dark:bg-gray-100 dark:text-gray-800">
-          
 
-                <div className="">
+
+                <div className="pb-20">
                     <p className="text-2xl text-center py-8">What our customers are saying</p>
                     <p className="text-center">Step into a world where each stroke tells a story. Hear what our customers have to say about their transformative experiences with our art.</p>
                 </div>
 
 
-                <div className="container flex items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-around lg:px-10">
+                <div className="container flex items-center justify-center mx-auto md:flex-row lg:justify-around lg:px-10">
                     <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
                         <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                             <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">

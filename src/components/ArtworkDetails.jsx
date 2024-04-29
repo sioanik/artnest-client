@@ -44,8 +44,8 @@ const ArtworkDetails = () => {
 
 
     return (
-        <div className="mx-auto">
-            <div className="card bg-base-100 w-1/2 mx-auto shadow-xl">
+        <div className="w-[80%] mx-auto my-14">
+            <div className="card bg-base-100 shadow-xl">
                 <figure><img className="" src={selectedArt.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">

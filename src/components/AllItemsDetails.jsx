@@ -18,8 +18,8 @@ const AllItemsDetails = () => {
     }, [id])
 
     return (
-        <div className="w-2/3 mx-auto card bg-base-100 py-10 shadow-xl">
-            <figure><img src={item.image} className="max-h-48" alt="Shoes" /></figure>
+        <div className="w-[80%] mx-auto my-14 card bg-base-100 py-10 shadow-xl">
+            <figure><img src={item.image} className="" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {item.item_name}
@@ -31,11 +31,14 @@ const AllItemsDetails = () => {
                 <p>{item.description}</p>
                 <p>Subcategory Name- <span>{item.subcategory_Name}</span></p>
 
-                <p>Customization- <span>{item.customization}</span></p>
+                {
+                    item.customization === 'yes' ? (<p>Customization Available</p>) : (<p>Customization not Available</p>)
+
+                }
 
                 <p>Stock Status- <span>{item.stockStatus}</span></p>
 
-               
+
             </div>
         </div>
     );

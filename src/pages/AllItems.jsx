@@ -8,14 +8,15 @@ const AllItems = () => {
     // console.log(crafts[1].email);
 
     return (
-        <div className="w-2/3 mx-auto">
-            <div className=" ">
+        <div className="w-[80%] mx-auto my-14">
+            <div className="pb-20">
                 <p className="text-2xl text-center py-8">Browse All Items</p>
                 <p className="text-center">Dive into a world of endless creativity as you explore our curated selection of artisanal treasures. Discover unique crafts and items crafted with passion, waiting to inspire your next masterpiece.</p>
             </div>
             <div>
-                <div className="ml-20 mt-20 overflow-x-auto">
-                    <table className="table">
+                {/* <div className="ml-20 mt-20 overflow-x-auto"> */}
+                <div className="">
+                    <table className="table-xs md:table">
                         {/* head */}
                         <thead>
                             <tr>

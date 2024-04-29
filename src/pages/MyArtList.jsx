@@ -20,7 +20,7 @@ const MyArtList = () => {
     console.log(custUnavailable);
 
 
-   
+
 
 
     useEffect(() => {
@@ -34,11 +34,11 @@ const MyArtList = () => {
     }, [])
 
 
-    const handleCustomizable = () =>{
+    const handleCustomizable = () => {
         setMyItem(custAvailable)
     }
 
-    const handleNotCustomizable = () =>{
+    const handleNotCustomizable = () => {
         setMyItem(custUnavailable)
     }
 
@@ -100,7 +100,7 @@ const MyArtList = () => {
                 <p className="text-2xl text-center py-8">My Items</p>
                 <p className="text-center">Embark on a journey of personalized creativity as you delve into our exclusive collection of your own crafted treasures. Explore unique crafts and items meticulously crafted with your passion, ready to fuel your next creative endeavor.</p>
             </div>
-            <div>
+            <div className="">
                 <div className="flex justify-center mb-20">
                     <div className="dropdown dropdown-hover">
                         <div tabIndex={0} role="button" className="btn m-1">Filter Customization </div>
@@ -110,7 +110,7 @@ const MyArtList = () => {
                         </ul>
                     </div>
                 </div>
-                <div>
+                <div className="">
                     {
                         myItem.map((item, idx) => <div key={idx}>
                             <div className="card bg-base-100 py-10 shadow-xl">
@@ -118,13 +118,21 @@ const MyArtList = () => {
                                 <div className="text-center card-body">
                                     <h2 className="card-title mx-auto">
                                         {item.item_name}
-                                        <div className="badge badge-primary">{item.rating} <span className="pl-1"><FaStar /></span></div>
+                                        <div className="hidden md:badge md:badge-primary">{item.rating} <span className="pl-1"><FaStar /></span></div>
                                     </h2>
                                     <h2 className="mx-auto card-title text-red-500"> Price-
                                         <span>${item.price}</span>
                                     </h2>
-                                    <p>{item.description}</p>
-                                    <p>Customization- <span>{item.customization}</span></p>
+                                    <h2 className="md:hidden mx-auto flex"> Rating-
+                                        <span className="flex items-center gap-1 pl-1">{item.rating}< FaStar /></span>
+                                        
+                                    </h2>
+                                    <p className="lg:px-20">{item.description}</p>
+
+                                    {
+                                        item.customization === 'yes' ? (<p>Customization Available</p>) : (<p>Customization not Available</p>)
+
+                                    }
 
                                     <p>Stock Status- <span>{item.stockStatus}</span></p>
 

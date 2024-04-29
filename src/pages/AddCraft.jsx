@@ -69,9 +69,9 @@ const AddCraft = () => {
 
     return (
         <div>
-            <div className="px-10">
+            <div className="w-[80%] mx-auto my-14">
                 <p className="text-2xl text-center py-8">Add Craft Item</p>
-                <p className="text-center">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p>
+                <p className="text-center md:px-20">Unleash your creativity and showcase your craftsmanship. Share your masterpieces with the world, and let your artistry shine.</p>
             </div>
             <div className="mt-10 px-10 mx-auto">
                 <form onSubmit={handleAddCraft}>
