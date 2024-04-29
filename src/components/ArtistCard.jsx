@@ -1,7 +1,7 @@
 
 
 const ArtistCard = ({item}) => {
-    console.log(item);
+    // console.log(item);
     return (
         <div>
 

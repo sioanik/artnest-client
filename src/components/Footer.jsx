@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer mt-20 p-10 bg-orange-100 text-base-content flex flex-col md:flex-row justify-around">
+            <footer className="footer mt-20 p-10 text-base-content flex flex-col md:flex-row justify-around">
                 <div className='w-60'>
                     <h3 className='footer-title'>About</h3>
                     <p>At ArtNest, we're passionate about enhancing your artistic journey. With a commitment to excellence, we offer a curated selection of premium painting and drawing supplies.

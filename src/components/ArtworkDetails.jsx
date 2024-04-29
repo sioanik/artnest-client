@@ -55,11 +55,18 @@ const ArtworkDetails = () => {
                     <h2 className="card-title text-red-500"> Price-
                         <span>${selectedArt.price}</span>
                     </h2>
-                    <p>{selectedArt.subcategory_Name}</p>
+                    <p className="">Category- <span>{selectedArt.subcategory_Name}</span></p>
                     <p>{selectedArt.description}</p>
+                    <p>Processing Time- {selectedArt.processing_time}</p>
+
+                    {
+                        selectedArt.customization === 'yes'? (<p>Customization Available</p>) : (<p>Customization not Available</p>)
+                       
+                    }
+
+
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">{selectedArt.stockStatus}</div>
-                        <div className="badge badge-outline">{selectedArt.processing_time}</div>
                     </div>
                 </div>
             </div>

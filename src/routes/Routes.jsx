@@ -11,6 +11,7 @@ import MyArtList from "../pages/MyArtList";
 import ArtworkDetails from "../components/ArtworkDetails";
 import UpdateCraft from "../pages/UpdateCraft";
 import AllItemsDetails from "../components/AllItemsDetails";
+import CategoryAllItems from "../components/CategoryAllItems";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <MyArtList></MyArtList>
         </ProtectedRoute>
+      },
+      {
+        path: '/category-items/:url',
+        element: <CategoryAllItems></CategoryAllItems>
       },
       // {
       //   path: '/private',
