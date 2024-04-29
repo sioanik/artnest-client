@@ -8,9 +8,10 @@ const Artwork = ({ artwork }) => {
                 <figure className="h-60"><img src={artwork.image} alt="artwork" className="w-full h-full object-contain" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{artwork.item_name}</h2>
-                    <p>{artwork.short_description}</p>
+                    <p>{artwork.subcategory_Name}</p>
+                    <p className="text-red-500 font-bold">Price- <span>${artwork.price}</span></p>
                     <div className="card-actions justify-end">
-                        <Link to={`/artwork-details/${artwork.id}`}>
+                        <Link to={`/artwork-details/${artwork._id}`}>
                         <button className="btn btn-primary">Details</button>
                         </Link>
                     </div>

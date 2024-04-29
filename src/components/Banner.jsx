@@ -8,7 +8,7 @@ import { Zoom } from "react-awesome-reveal";
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-96 mb-40">
+            <div className="carousel w-full h-96 mb-20">
                 <div id="slide1" className="carousel-item relative w-full">
 
                     <div className="hero h-96" style={{ backgroundImage: `url(${banner1})` }}>
