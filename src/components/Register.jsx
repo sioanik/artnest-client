@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
@@ -13,6 +13,7 @@ const Register = () => {
 
     const navigate = useNavigate()
 
+    const location = useLocation()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -58,7 +59,7 @@ const Register = () => {
 
     useEffect(() => {
         if (user) {
-            navigate(location?.state ? location.state : '/')
+            navigate(location?.state.pathname ? location.state.pathname : '/')
 
         }
     }, [user])

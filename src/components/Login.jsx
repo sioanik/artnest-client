@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
+    const location = useLocation()
     const { loginUser, googleLogin, githubLogin, user, setUser } = useContext(AuthContext)
 
     const navigate = useNavigate()
@@ -44,10 +45,10 @@ const Login = () => {
         toast("Logging in");
     }
 
-
+    console.log(location);
     useEffect(() => {
         if (user) {
-            navigate(location?.state ? location.state : '/')
+            navigate(location?.state.pathname ? location.state.pathname : '/')
 
         }
     }, [user])
