@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
@@ -106,9 +106,9 @@ const Navbar = () => {
                             <NavLink to={'/login'}>Login</NavLink>
                         </li> */}
 
-                        <li className="hidden md:block">
+                        {/* <li className="hidden md:block">
                             <NavLink to={'/register'}>Register</NavLink>
-                        </li>
+                        </li> */}
 
                         {/* <li>
                             <NavLink to={'/register'}>Logout</NavLink>
@@ -135,9 +135,15 @@ const Navbar = () => {
 
                             </div> :
 
-                            <button className='btn btn-xs h-9 btn-primary'>
-                                <NavLink to={'/login'}>Login</NavLink>
+                            <div className="flex gap-2">
+                                <button className='btn btn-xs h-9 btn-primary'>
+                                <Link to={'/register'}>Register</Link>
                             </button>
+                            <button className='btn btn-xs h-9 btn-primary'>
+                                <Link to={'/login'}>Login</Link>
+                            </button>
+                            </div>
+                            
 
                         }
                     </div>

@@ -13,7 +13,7 @@ const Register = () => {
 
     const navigate = useNavigate()
 
-    const location = useLocation()
+    // const location = useLocation()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -51,18 +51,18 @@ const Register = () => {
 
                 updateUserProfile(name, image)
                     .then(() => {
-
+                        navigate('/')
                     })
             })
 
     }
 
-    useEffect(() => {
-        if (user) {
-            navigate(location?.state.pathname ? location.state.pathname : '/')
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate(location?.state.pathname ? location.state.pathname : '/')
 
-        }
-    }, [user])
+    //     }
+    // }, [user])
 
 
 

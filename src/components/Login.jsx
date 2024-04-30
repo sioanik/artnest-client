@@ -48,10 +48,10 @@ const Login = () => {
     console.log(location);
     useEffect(() => {
         if (user) {
-            navigate(location?.state.pathname ? location.state.pathname : '/')
+            navigate(location?.state ? location.state : '/')
 
         }
-    }, [user])
+    }, [user, location.state, navigate])
 
     return (
         <div>
