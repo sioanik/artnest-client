@@ -34,13 +34,13 @@ const router = createBrowserRouter([
       {
         path: '/artwork-details/:id',
         element: <ArtworkDetails></ArtworkDetails>,
-        loader: () => fetch('http://localhost:5000/crafts')
+        loader: () => fetch('https://artnest-server-eta.vercel.app/crafts')
 
       },
       {
         path: '/all-items',
         element: <AllItems></AllItems>,
-        loader: () => fetch('http://localhost:5000/crafts')
+        loader: () => fetch('https://artnest-server-eta.vercel.app/crafts')
       },
       {
         path: '/item-details/:id',

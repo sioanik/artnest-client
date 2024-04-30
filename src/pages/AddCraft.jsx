@@ -38,7 +38,7 @@ const AddCraft = () => {
 
         console.log(newCraft);
 
-        fetch('http://localhost:5000/crafts', {
+        fetch('https://artnest-server-eta.vercel.app/crafts', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

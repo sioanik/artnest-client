@@ -12,7 +12,7 @@ const ArtworkDetails = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/artworkDetails/${id}`)
+        fetch(`https://artnest-server-eta.vercel.app/artworkDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)

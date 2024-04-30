@@ -9,7 +9,7 @@ const AllItemsDetails = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleAllCraft/${id}`)
+        fetch(`https://artnest-server-eta.vercel.app/singleAllCraft/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)

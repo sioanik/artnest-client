@@ -24,7 +24,7 @@ const MyArtList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mycrafts/${user?.email}`)
+        fetch(`https://artnest-server-eta.vercel.app/mycrafts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyAllItem(data)
@@ -64,7 +64,7 @@ const MyArtList = () => {
                     //   });
 
 
-                    fetch(`http://localhost:5000/delete/${id}`, {
+                    fetch(`https://artnest-server-eta.vercel.app/delete/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

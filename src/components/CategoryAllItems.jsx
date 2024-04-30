@@ -14,7 +14,7 @@ const CategoryAllItems = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/catItems/${urlWithGap}`)
+        fetch(`https://artnest-server-eta.vercel.app/catItems/${urlWithGap}`)
             .then(res => res.json())
             .then(data => {
                 setCatItems(data)

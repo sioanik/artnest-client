@@ -6,7 +6,7 @@ const ArtworksSection = () => {
     const [artworks, setArtworks] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allcrafts/`)
+        fetch(`https://artnest-server-eta.vercel.app/allcrafts/`)
             .then(res => res.json())
             .then(data => {
                 setArtworks(data)
@@ -17,7 +17,7 @@ const ArtworksSection = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/artworks/')
+    //     fetch('https://artnest-server-eta.vercel.app/artworks/')
     //         .then(res => res.json())
     //         .then(data => setArtworks(data))
     // }, [])

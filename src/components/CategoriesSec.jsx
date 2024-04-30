@@ -7,7 +7,7 @@ const CategoriesSec = () => {
     const [subcats, setSubcats] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/subcategories/`)
+        fetch(`https://artnest-server-eta.vercel.app/subcategories/`)
             .then(res => res.json())
             .then(data => {
                 setSubcats(data)

@@ -14,7 +14,7 @@ const UpdateCraft = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/updateCraft/${id}`)
+        fetch(`https://artnest-server-eta.vercel.app/updateCraft/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -53,7 +53,7 @@ const UpdateCraft = () => {
 
         console.log(newCraft);
 
-        fetch(`http://localhost:5000/updateCrafts/${id}`, {
+        fetch(`https://artnest-server-eta.vercel.app/updateCrafts/${id}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

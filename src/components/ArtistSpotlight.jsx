@@ -7,7 +7,7 @@ const ArtistSpotlight = () => {
     const [artist, setAtrist] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/artists/')
+        fetch('https://artnest-server-eta.vercel.app/artists/')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
