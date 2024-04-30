@@ -11,7 +11,7 @@ const CategoriesSec = () => {
             .then(res => res.json())
             .then(data => {
                 setSubcats(data)
-                console.log(data);
+                // console.log(data);
             })
     }, [])
 
