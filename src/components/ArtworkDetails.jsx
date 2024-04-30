@@ -16,7 +16,7 @@ const ArtworkDetails = () => {
             .then(res => res.json())
             .then(data => {
                 setItem(data)
-                console.log(data);
+                // console.log(data);
             })
     }, [id])
 

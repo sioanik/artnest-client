@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const AllItemsTable = ({ item }) => {
-    console.log(item);
+    // console.log(item);
     return (
         <tbody>
             {/* row 1 */}
